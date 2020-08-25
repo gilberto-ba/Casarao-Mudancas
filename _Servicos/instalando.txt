@@ -1,0 +1,268 @@
+Casarão Mundaça (25/08/2020)
+
+Dirceu: R$ 900 (com 40% entrada)
+
+-----------------------------------------------------------------
+
+Projeto local:
+C:\xampp\htdocs\_Angular\casarao
+
+-----------------------------------------------------------------
+
+Obs.: 
+a) Precisa ter o node.js instalado na maquina primeiro.
+https://nodejs.org/en/
+digite no terminal: node -v
+
+b) Verificar se tem o npm instalado:
+digite no terminal: npm -v
+
+C) Instalando o Angular CLI
+> npm i -g @angular/cli
+
+-----------------------------------------------------------------
+
+CRIANDO O PROJETO:  
+
+- Criando projeto (dentro da pasta frontend com SASS e routing)
+  > ng new casarao --minimal --style=scss --routing
+
+- Iniciando o projeto: (dentro da pasta frontend)
+  > cd meu-novo-projeto
+  > npm start
+Obs.: Vai abrir na porta http://localhost:4200/
+
+-----------------------------------------------------------------
+
+- No arquivo angular.json fo alterado 2 linhas para "false" para gerar arquivos  html e css separados:
+  "schematics": {
+        "@schematics/angular:component": {
+               "inlineTemplate": false,
+               "inlineStyle": false,
+
+- No arquivo src/app/app.component.ts
+  > Iremos apagar o template e style e colocar a linha abaixo e criar o html no projeto:
+  > templateUrl: 'app.component.html'
+
+- Instalando Material
+  > ng add @angular/material
+
+Referência dos Icones:
+https://material.io/resources/icons/?style=baseline
+
+HEADER----------------------------------------
+- Criando Header (component) > ng generate component
+  > ng g c components/template/header
+
+- Importa AUTOMÁTICO  "material/toolbar" dentro do arquivo "app.modules.ts"
+  > import { MatToolbarModule } from '@angular/material/toolbar'; 
+
+FOOTER----------------------------------------
+- Criando Footer (component) > ng generate component
+  > ng g c components/template/footer
+
+- Importa AUTOMÁTICO "material/toolbar" dentro do arquivo "app.modules.ts"
+  > import { FooterComponent } from './components/template/footer/footer.component'; 
+
+NAV----------------------------------------
+- Criando Footer (component) > ng generate component
+  > ng g c components/template/nav
+
+- Importa AUTOMÁTICO dentro do arquivo app.modules.ts
+  > import { NavComponent } from './components/template/nav/nav.component'; 
+
+Obs.: Importar +2 componentes dentro do arquivo "app.modules.ts"
+  > import { MatSidenavModule } from '@angular/material/sidenav';
+  > import { MatListModule } from '@angular/material/list';
+
+HOME----------------------------------------
+- Criando Home (component) > ng generate component
+  > ng g c components/views/home
+
+- Importa AUTOMÁTICO dentro do arquivo "app.modules.ts"
+  > import { HomeComponent } from './components/views/home/home.component';
+
+Obs.: No Arquivo "nav.component.html" incluir:
+  > <mat-sidenav-content>
+        <app-home></app-home>
+    </mat-sidenav-content>
+
+- importar Component dentro do arquivo "app.modules.ts"
+  > import { MatCardModule } from '@angular/material/card';
+
+COMPONENTES:
+CONTATOS - CURRICULUM - WEBSITES -----------------------
+- Criando Home (component) > ng generate component
+  > ng g c components/views/contatos
+  > ng g c components/views/websites
+  > ng g c components/views/curriculum
+
+INSTALANDO JQUERY/BOOTSTRAP/MATERIALIZE------------------------------
+https://jornadadodev.com.br/cursos/curso-de-angular-2/aula-26-angular-cli-instalando-bibliotecas-bootstrap-jquery-materialize-lodash
+
+  > npm i jquery --save
+  > npm install --save @types/jquery
+  > npm install popper.js --save
+  
+
+Ex.:
+Usar nos arquivos .TS dentro de:
+ngOnInit(): void {
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("p").toggle();
+      });
+    });
+}
+
+e colocar o jquery (inport):
+import * as $ from 'jquery';
+
+- No arquivo angular.json:
+"scripts": [
+  "node_modules/jquery/dist/jquery.slim.js",
+  "node_modules/popper.js/dist/umd/popper.js"
+],
+
+INSTALANDO BOOSTRAP---------------------------------------
+
+> npm install bootstrap --save
+> npm install popper.js --save
+
+- No arquivo angular.json:
+"scripts": [
+  "node_modules/popper.js/dist/umd/popper.js",
+  "node_modules/bootstrap/dist/js/bootstrap.js"
+],
+
+- Add the Bootstrap CSS file to the "styles" array:
+"styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.css",
+  "src/styles.css"
+],
+
+LINKANDO OS COMPONENTS-----------------------------------------
+
+- no arquivo (app-routing.module.ts) criar as rotas:
+1) Importar componets ex.:
+  > import { HomeComponent } from './components/views/home/home.component';
+
+2) Criaros path's Json ex.:
+  {
+    path:"",
+    component: HomeComponent
+  },
+  {
+    path:"contatos",
+    component: ContatosComponent
+  } 
+
+- no header.html colocar os (routerLink):
+  <nav>
+     <a routerLink="/">Home</a>
+     <a routerLink="curriculum">Curriculum</a>
+  </nav>
+
+- app.component.html incluir o (router):
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+--------------------------------------------------
+
+Enviando email pelo backend com formspree.io:
+https://formspree.io/
+
+Action: https://formspree.io/moqkrnlz
+gilberto.moral@gmail.com
+Ba131613
+
+--------------------------------------------------
+
+Caminho Imagens:
+
+- No css:
+
+  background: #0e74b8 url(../../../../assets/img/bg.png) repeat-x left center;
+
+- No Html:
+  <img src="assets/img/icon_linkedin.png"
+
+
+Caminho Imagens por variável:
+
+- No arquivo .TS dentro do exports:
+  
+  fullImagePath1: string;
+
+  constructor() {
+    this.fullImagePath1 = '/assets/img/cases/michelle.jpg'
+  }
+
+- No Html:
+  <img [src]="fullImagePath1">
+
+--------------------------------------------------
+
+Favicon:
+
+- No arquivo angular.json:
+
+"assets": [
+   "src/assets/",
+   "src/assets/img/",
+   "src/favicon.png"
+],
+
+- no index.html:
+<link rel="icon" type="image/x-icon" href="favicon.png" />
+
+--------------------------------------------------
+
+Recomenda-se trocar Módulo from lodash with lodash-es na versão Angular 10:
+https://stackoverflow.com/questions/62589229/angular-10-upgrade-fix-commonjs-or-amd-dependencies-can-cause-optimization-bai/62589268#62589268
+
+>  npm install --save lodash-es
+
+- No arquivo angular.json:
+"architect": {
+  "build": {
+    "builder": "@angular-devkit/build-angular:browser",
+    "options": {
+      "allowedCommonJsDependencies": ["lodash"]
+    }
+  }
+}
+
+Also make sure to import the library with ES import statements:
+
+--------------------------------------------------
+
+Builds 
+
+- Build para Dev
+>  ng build
+
+- Build para Produção (ng build):
+>  ng build --base-href http://www.impactodesigner.com.br/portfolio/
+Ai entrar no dist/index.html e editar o caminho:
+<base href="http://www.impactodesigner.com.br/portfolio/novo/">
+
+--------------------------------------------------
+
+Instalando o SASS em um projeto existente:
+Obs.: 
+1 - Precisa estar dntro do diretório.
+2 - Ele não altera os arquivos .css, só para componentes novos, 
+no caso vai ter que renomear de .css para .scss
+
+> ng set defaults.styleExt scss
+
+--------------------------------------------------
+
+Verificar erros:
+
+> ng lint
+
+--------------------------------------------------
+
