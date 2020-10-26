@@ -1,0 +1,54 @@
+footer {
+    .footer {
+        position: fixed;
+        width: 100%;
+        padding: 14px 0;
+        bottom: 0;
+        display: block;
+        background: url(../../../../assets/img/bg-footer.png) repeat-x left top;
+        border-top: 1.6px solid #d6500de3;
+        clear: both;
+        overflow: hidden;
+        .content {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .copyright {
+            position: relative;
+            width: 100%;
+            font-size: 1.0rem;
+            font-weight: 300;
+            display: block;
+            float: left;
+            text-align: center;
+            margin-top: 5px;
+            color: white;
+        }
+    }
+}
+
+
+/* Mobile ate 768px */
+@media only all and (max-device-width: 768px) {
+    footer {
+        .footer {
+            position: relative;
+            height: 70px;
+            padding: 10px 0;
+            bottom:0;
+            .content {
+                position: relative;
+                width: 100%;
+                height: 120px;
+                margin: 0 auto;
+            }
+            .copyright {
+                width: 100%;
+                font-size: 0.7rem;
+                top: 10px;
+            }
+        }
+    }
+}

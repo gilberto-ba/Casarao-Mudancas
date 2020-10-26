@@ -1,0 +1,16 @@
+.local{
+    iframe{
+        position: relative;
+        width: 100%;
+        display: block;
+        border: 1px solid rgba(0, 0, 0, 0.671);
+        -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.616);
+        -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.616);
+        box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.616);
+    }
+}
+
+/* Mobile ate 768px */
+@media only all and (max-device-width: 768px) {
+
+}

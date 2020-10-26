@@ -1,0 +1,15 @@
+.servicos {
+    display: flex;
+    img {
+        width: 200px;
+        height: auto;
+        margin-top: 10px;
+    }
+}
+
+
+/* Mobile ate 768px */
+
+@media only all and (max-device-width: 768px) {
+    .servicos {}
+}

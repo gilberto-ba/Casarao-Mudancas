@@ -1,1 +1,178 @@
-/* You can add global styles to this file, and also import other style files */
+@import "var.scss";
+@import "assets/fonts/fonts.scss";
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Abel-Regular';
+    background-color: #ff8800;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.dados {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    top: 0px;
+    padding-bottom: 100px;
+    background-color: #ec8208e0;
+    clear: both;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding: 10px 20px;
+    font-family: 'Abel-Regular';
+    clear: both;
+    h4 {
+        /* breadcrumb */
+        position: relative;
+        width: 100%;
+        margin: 15px 0;
+        font-family: 'Abel-Regular';
+        font-size: 1.850rem;
+        line-height: 2.8rem;
+        display: block;
+        float: left;
+        text-shadow: 1px 1px 2px #722a14;
+        left: -4px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #722a1475;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        clear: both;
+        overflow: hidden;
+    }
+    p {
+        position: relative;
+        width: 100%;
+        margin: 10px 0;
+        padding: 0 20px;
+        font-size: 1.250rem;
+        letter-spacing: 0.8px;
+        text-shadow: 0px 2px 3px #722a14;
+        .subtitle {
+            text-shadow: 0px 2px 3px #f58a10;
+            text-transform: uppercase;
+            padding: 2px 4px;
+            font-size: 1.250rem;
+            color: black;
+        }
+        &.clear {
+            position: relative;
+            clear: both;
+        }
+        &.bg {}
+    }
+    .dados {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+    &.top {
+        margin: 0;
+    }
+    &.contatos {
+        margin: 20px 0 0;
+    }
+    &.servicos {
+        margin: 20px 0 0;
+    }
+    &.fotos {
+        margin: 20px 0 0;
+    }
+}
+
+img.floatL {
+    float: left;
+    margin: 0 6px 6px 0;
+}
+
+img.floatR {
+    float: right;
+    margin: 0 0px 6px 6px;
+}
+
+img.floatL,
+img.floatR {
+    display: block;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #722a14;
+    z-index: 2;
+    object-fit: cover;
+    -webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+    -moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+    -ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+    -o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+    transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+    &:hover {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Mobile ate 768px */
+@media only all and (max-device-width: 768px) {
+
+    .dados {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    section {
+        padding: 10px 5px;
+
+        h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.0rem;
+            line-height: 2.0rem;
+            left: 5px;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #722a1475;
+        }
+        p {
+            margin: 10px 0;
+            padding: 0 10px;
+            font-size: 1.0rem;
+            .subtitle {
+                padding: 2px 0;
+                font-size: 1.0rem;
+            }
+            &.clear {
+                position: relative;
+                clear: both;
+            }
+            &.bg {}
+        }
+    }
+
+}
