@@ -114,5 +114,8 @@
       }
     }
   },
-  "defaultProject": "casarao"
+  "defaultProject": "casarao",
+  "cli": {
+    "analytics": "124442b9-5c3d-46e2-8d5f-ba9b7e198036"
+  }
 }
